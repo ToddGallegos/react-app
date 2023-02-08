@@ -3,6 +3,7 @@ import Home from './Home';
 import Nav from './Nav';
 import Pokemon from './Pokemon';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Todo from './Todo'
 
 export default class App extends Component {
   constructor(){
@@ -30,6 +31,7 @@ export default class App extends Component {
 
             <Route path='/' element={<Home age={this.state.age} incrementAge = {this.incrementAge} resetAge = {this.resetAge}/>}/>
             <Route path='/pokemon' element={<Pokemon />}/>
+            <Route path='/todo' element={<Todo />}/>
             
           </Routes>
 

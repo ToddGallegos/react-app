@@ -33,25 +33,25 @@ export default class Pokemon extends Component {
           'width': '75%',
           'margin': '0 auto'
         }
-        console.log(this.state.pokemons[0])
+
         return this.state.pokemons.map(p => 
-          <div className="card" style={style1}>
-          <img style={style2} src={ p.front_shiny_sprite } className="card-img-top" alt={ p.pokemon_name }/>
-          <div className="card-body">
-              <h5 className="card-title">{ p.pokemon_name }</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-          <li className="list-group-item">HP: { p.base_hp }</li>
-          <li className="list-group-item">Attack: { p.base_attack }</li>
-          <li className="list-group-item">Defense: { p.base_defense }</li>
-          </ul>
-      </div>)
+          <div className="card" style={style1} key={p.id}>
+            <img style={style2} src={ p.front_shiny_sprite } className="card-img-top" alt={ p.pokemon_name }/>
+            <div className="card-body">
+                <h5 className="card-title">{ p.pokemon_name }</h5>
+            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">HP: { p.base_hp }</li>
+              <li className="list-group-item">Attack: { p.base_attack }</li>
+              <li className="list-group-item">Defense: { p.base_defense }</li>
+            </ul>
+          </div>)
         }
 
   render() {
     return (
       <div>
-        <h1>Pokemon from Flask App Database via API:</h1>
+        <h1>All Pokemon from Flask App Database via API:</h1>
         <div className="d-inline-flex flex-wrap">
           {this.state.pokemons.length === 0? <p>loading...</p> : this.showPokemon()}
         </div>
