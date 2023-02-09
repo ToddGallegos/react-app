@@ -53,7 +53,7 @@ export default class Pokemon extends Component {
       <div>
         <h1>All Pokemon from Flask App Database via API:</h1>
         <div className="d-inline-flex flex-wrap">
-          {this.state.pokemons.length === 0? <p>loading...</p> : this.showPokemon()}
+          {this.state.pokemons.length === 0? <p>loading... (is the Pokemon app running?)</p> : this.showPokemon()}
         </div>
       </div>
     )
